@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>和美琴行单据-打印</title>
+  <meta name="author" content="DH">
+  <style>
+		html,body{
+		    margin: 0;
+		    padding: 0;
+		}
+		body{
+		    font-size: 14px;
+		    color: #333;
+		}
+		@media print {
+		    body{-webkit-print-color-adjust:exact;} 
+		}
+		.fr{
+		    float:right;
+		}
+		.vt{
+		    vertical-align: top;
+		}
+    .wrap {
+      margin: 0 auto;
+      padding: 20px;
+      width: 680px;
+			height: 405px;
+      border: solid black 3px;
+    }
+
+    .form .row {
+      padding: 10px 0 0;
+    }
+
+    .btn {
+      display: block;
+      margin: 20px auto;
+      padding: 8px 16px;
+    }
+		table{
+			border-collapse:collapse;
+		}
+
+		table, td, th{
+			border:1px solid black;
+		}
+
+  </style>
+</head>
+
+<body>
+
+  <div id="wrap" class="wrap">
+    <div class="con">
+			<h3 style="text-align:center;">深圳市和美琴行乐器有限公司^管乐保养、维修单</h3>
+			<h6 style="text-align:center;margin-top: -12px;">地址:深圳市福田区上步南路1069号二楼&nbsp;&nbsp;&nbsp;营业部:83638876&nbsp;&nbsp;&nbsp;传真:83625606&nbsp;&nbsp;&nbsp;售后服务部：83631199</h6>
+			<hr style="width: 630px;text-align:center;" />
+			<h5 style="text-align:left;margin-left: 40px;">
+				接收日期:
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				2018-12-11
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				单据编号|:
+				1923185484654684856
+			</h5>
+			<table style="width: 630px;margin:auto;margin-top: -10px;">
+					<tr height="32px;">
+						<th width="90px;">客户姓名</th>
+						<th width="118px;"></th>
+						<th width="60px;">电话</th>
+						<th width="130px;"></th>
+						<th>收费金额</th>
+						<th></th>
+					</tr>
+					<tr height="32px;">
+						<th width="90px;">品牌/型号</th>
+						<th width="118px;">YTR-200DR</th>
+						<th width="60px;">编号</th>
+						<th width="130px;">19097</th>
+						<th>是否本行客户</th>
+						<th>本行</th>
+					</tr>
+					<tr height="32px;">
+						<th width="90px;">乐器内附属品</th>
+						<th colspan="5" style="text-align: left;">XXXXX</th>
+					</tr>
+					<tr height="32px;">
+						<th width="90px;">附属品客户确认签名</th>
+						<th colspan="5" style="text-align: left;">某某某</th>
+					</tr>
+					<tr height="32px;">
+						<th width="90px;">希望维修内容</th>
+						<th colspan="5" style="text-align: left;">维修</th>
+					</tr>
+					<tr height="32px;">
+						<th width="90px;">技师建议</th>
+						<th colspan="5" style="text-align: left;">XXXXX</th>
+					</tr>
+					<tr height="32px;">
+						<th width="90px;">备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注:</th>
+						<th colspan="5" style="text-align: left;">XXXXXXXX</th>
+					</tr>
+			</table>
+			<h6 style="text-align:left;margin-top: 5px;margin-left: 30px;">
+				接收人:谢思贤
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				技师:
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				客户:
+			</h6>
+			<h5 style="text-align:left;margin-top: -15px;margin-left: 30px;">
+				购买日期:2018年12月11日
+			</h5>
+    </div>
+    <button class="btn no-print" id="btn">打印</button>
+  </div>
+
+  <script src="files/Print.js"></script>
+  <script>
+    document.getElementById('btn').onclick = function () {
+      Print('#wrap', {
+        onStart: function () {
+          console.log('onStart', new Date())
+        },
+        onEnd: function () {
+          console.log('onEnd', new Date())
+        }
+      })
+    }
+  </script>
+</body>
+
+</html>
